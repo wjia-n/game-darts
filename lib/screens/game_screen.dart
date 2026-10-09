@@ -483,7 +483,7 @@ class _MiniDartPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final tip = Offset(size.width / 2, size.height - 2);
-    final dir = Offset(-0.25, -1).normalized();
+    final dir = const Offset(-0.25, -1) / const Offset(-0.25, -1).distance;
     final end = tip + dir * 18;
     // Shaft.
     canvas.drawLine(
@@ -642,7 +642,7 @@ class _DartboardPainter extends CustomPainter {
 
   /// A physical dart: tip, metal barrel, stem, flights — angled out of board.
   void _drawDart(Canvas canvas, Offset tip, double s) {
-    final dir = const Offset(-0.28, -1).normalized();
+    final dir = const Offset(-0.28, -1) / const Offset(-0.28, -1).distance;
     final barrelEnd = tip + dir * 34 * s;
     final stemEnd = tip + dir * 46 * s;
     // Shadow on the board.
