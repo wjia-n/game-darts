@@ -69,7 +69,7 @@ class DartsSettings extends ChangeNotifier {
   int wins = 0;
   int gamesPlayed = 0;
   int bestDarts = 0; // fewest darts to check out (0 = none yet)
-  bool isPro = false;
+  bool isPro = true; // everything unlocked — no Pro version
 
   /// Custom theme colors (ARGB ints). Defaults mirror The Bull's Inn.
   Map<String, int> customColors = Map.of(_defaultCustomColors);
@@ -138,7 +138,7 @@ class DartsSettings extends ChangeNotifier {
     wins = p.getInt(_kWins) ?? 0;
     gamesPlayed = p.getInt(_kGames) ?? 0;
     bestDarts = p.getInt(_kBestDarts) ?? 0;
-    isPro = p.getBool(_kIsPro) ?? false;
+    isPro = true; // everything unlocked
     for (final k in _defaultCustomColors.keys) {
       customColors[k] = p.getInt('$_kCustomPrefix$k') ?? _defaultCustomColors[k]!;
     }
