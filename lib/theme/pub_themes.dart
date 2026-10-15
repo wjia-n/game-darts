@@ -75,7 +75,7 @@ class PubThemes {
     ),
     PubThemeDef(
       id: 'dublinsnug',
-      name: 'Dublin Snug',
+      name: 'Cozy Snug',
       woodDark: Color(0xFF2E3B22),
       woodMid: Color(0xFF4A5A34),
       woodDeep: Color(0xFF1A2312),
