@@ -6,6 +6,7 @@ import '../services/settings_service.dart';
 import '../theme/pub_design.dart';
 import '../theme/pub_themes.dart';
 import 'pro_screen.dart';
+import '../transfer/transfer_ui.dart';
 
 /// Settings — pub drawer metaphor, theme-aware.
 class SettingsScreen extends StatefulWidget {
@@ -103,6 +104,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+              TransferSaveTile(gameSlug: 'darts'),
                 _SectionTitle('Sound', t),
                 SettingRow(
                   theme: t,
