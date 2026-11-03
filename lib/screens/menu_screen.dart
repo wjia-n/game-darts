@@ -567,14 +567,6 @@ class _AppearanceCard extends StatelessWidget {
               ),
             ],
           ),
-          if (!isPro)
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Text(
-                '🔒 ${PubThemes.all.length - PubThemes.freeThemeIds.length} more themes in PRO',
-                style: Pub.label(12, theme: theme),
-              ),
-            ),
           const SizedBox(height: 14),
           Align(
             alignment: Alignment.centerLeft,
