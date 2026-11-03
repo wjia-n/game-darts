@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -189,7 +190,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       alignment: Alignment.center,
                       child: Text(
-                        '☕  Tip Jar',
+                        defaultTargetPlatform == TargetPlatform.iOS ? '⭐ Gold Star' : '☕  Tip Jar',
                         style: Pub.label(17, theme: t, color: t.woodDeep),
                       ),
                     ),
@@ -201,7 +202,8 @@ class _MenuScreenState extends State<MenuScreen> {
                   const SizedBox(height: 14),
                   _NamesCard(theme: t),
                   const SizedBox(height: 14),
-                  _SupportCard(theme: t, store: _store),
+                  if (defaultTargetPlatform != TargetPlatform.iOS)
+                    _SupportCard(theme: t, store: _store),
                   const SizedBox(height: 14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -858,7 +860,7 @@ class _SupportCard extends StatelessWidget {
     final audio = screen.widget.audio;
     return _Card(
       theme: theme,
-      title: 'Support Wajiha',
+      title: defaultTargetPlatform == TargetPlatform.iOS ? 'Gold Star' : 'Support Wajiha',
       child: Column(
         children: [
           Text(
